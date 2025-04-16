@@ -26,7 +26,7 @@ resource "azurerm_network_security_group" "vule_nsg" {
   name                = var.nsg_name
   location            = azurerm_resource_group.vule_rg.location
   resource_group_name = azurerm_resource_group.vule_rg.name
-
+}
   security_rule {
     name                       = "AllowSSH"
     priority                   = 1001
