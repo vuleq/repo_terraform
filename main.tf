@@ -7,7 +7,7 @@ resource "azurerm_resource_group" "vule_rg" {
   name     = var.resource_group_name
   location = var.location
 }
-
+  
 resource "azurerm_virtual_network" "vule_vnet" {
   name                = var.vnet_name
   address_space       = [var.vnet_address_space]
