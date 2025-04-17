@@ -24,6 +24,9 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      - name: Import existing Resource Group
+        run: terraform import azurerm_resource_group.vule_rg /subscriptions/740f7a70-5b4e-4fe9-baa9-3ed0b6c2972c/resourceGroups/vuleRG
+
       - name: Terraform Init
         run: terraform init
 
