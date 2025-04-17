@@ -21,6 +21,12 @@ variable "vnet_address_space" {
   default     = "10.0.0.0/16"
 }
 
+variable "ssh_public_key" {
+  description = "SSH public key string"
+  type        = string
+}
+
+
 variable "subnet_name" {
   default     = "vuleSubnet"
 }

@@ -89,7 +89,7 @@ resource "azurerm_virtual_machine" "vule_vm_linux" {
 
     ssh_keys {
       path     = "/home/${var.admin_username}/.ssh/authorized_keys"
-      key_data = file(var.ssh_key_path)
+      key_data = var.ssh_public_key
     }
   }
 

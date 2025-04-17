@@ -16,6 +16,9 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
+      - name: Save SSH Public Key to File
+        run: echo "${{ secrets.SSH_PUBLIC_KEY }}" > ./vule_key.pub
+
       - name: Azure Login
         uses: azure/login@v1
         with:
