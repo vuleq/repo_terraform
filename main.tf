@@ -1,3 +1,14 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.81.0"  # Dùng version mới nhất và ổn định
+    }
+  }
+
+  required_version = ">= 1.6.0"
+}
+
 provider "azurerm" {
   features {}
   subscription_id = "740f7a70-5b4e-4fe9-baa9-3ed0b6c2972c"
