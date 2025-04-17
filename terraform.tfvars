@@ -1,4 +1,3 @@
-subscription_id = "740f7a70-5b4e-4fe9-baa9-3ed0b6c2972c"
-ssh_key_path    = "C:/Users/Administrator/.ssh/vule_key.pub"
-ssh_public_key  = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCnAY3lcffsLWj6sp89bt3w1cc8/A+nEvFad8crfwq1MR6SHcEhl5R2w9T03a5QhoAuavwM8VBDH8gBDEPahjxp2CsH/ICOetVsQk8OcATf72pRrEeqdgl9d4G97bGxY3tRRUwdIdtPkjLa4rmNbknqdoDqUl4/l/yJHrkUgcYZMHXO5Q+dmyeFDh0hdgcwtyuCk+J3vUvDUGxr3sWKLw+OsYNjXaVQb2oE6vDP7PgSs8sE/xsWK6f2knHDlrgTp2m+gwr01yzEYC7H0zNok3wKp0AuLWQXdmVbzcm6h5dBCWJXsgvnoEsu9GzfsDN7Uy5O/8dclc5RrKnQJtLiBgTtKghReRVgjmvFkImj0WZN/QeE6wlkBBbvWrV+Qe1PQ07D9sElxMDHmwrzu665Bgi4I7vxf02ierzHsdtY8sy8ycb9mFm4fTJScGBC4vfOKQ/8mX6X+HRVuK2DxxCVOC9HjYQRX4nV+x/Lsn10e+kPd5ptjC0AN9DzYU1YYID0rjRPJjQn+DyhVc2fhky9zSFfs3yvFBQuNYwa/d6XcySp9ockjMYeFg7xsqjBjJHNCGfB3jTLOomf/OOosUvTdi2BWOizmHk7wGOGPnb6XBgilaYUgDyS9WiA/qMfbrkyQiwSJg0059aH9uHlMQu0gzOlmx4NzRgS2JrNMMPIWWHf4Q== administrator@Client568"
-
+resource_group_name = "vuleRG"
+location            = "East US"
+aks_cluster_name    = "vuleAKS"

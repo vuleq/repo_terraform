@@ -1,40 +1,37 @@
-name: Terraform Deploy to Azure
+name: Deploy NGINX to AKS
 
 on:
   push:
     branches:
       - main
+      - devops
 
 jobs:
-  terraform:
-    runs-on: ubuntu-22.04
+  deploy:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v2
 
-      - name: Save SSH Public Key to File
-        run: echo "${{ secrets.SSH_PUBLIC_KEY }}" > ./vule_key.pub
+    - name: Terraform Init
+      run: terraform init
 
-      - name: Azure Login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Terraform Apply
+      run: terraform apply -auto-approve
 
-      - name: Import existing Resource Group
-        run: terraform import azurerm_resource_group.vule_rg /subscriptions/740f7a70-5b4e-4fe9-baa9-3ed0b6c2972c/resourceGroups/vuleRG
+    - name: Set up Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Terraform Init
-        run: terraform init
+    - name: Get AKS Credentials
+      run: az aks get-credentials --resource-group vuleRG --name vuleAKS --overwrite-existing
 
-      - name: Terraform Validate
-        run: terraform validate
-
-      - name: Terraform Plan
-        run: terraform plan -var-file="terraform.tfvars"
-
-      - name: Terraform Apply
-        run: terraform apply -auto-approve -var-file="terraform.tfvars"
+    - name: Deploy NGINX to AKS
+      run: |
+        kubectl apply -f nginx-deployment.yaml
+        kubectl apply -f nginx-service.yaml
