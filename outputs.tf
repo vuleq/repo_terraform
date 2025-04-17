@@ -1,7 +1,7 @@
-output "public_ip_address" {
-  value = azurerm_public_ip.vule_vm_linux_ip.ip_address
+output "subnet_id" {
+  value = azurerm_subnet.vule_subnet.id
 }
 
-output "vm_name" {
-  value = azurerm_virtual_machine.vule_vm_linux.name
+output "vnet_name" {
+  value = azurerm_virtual_network.vule_vnet.name
 }
