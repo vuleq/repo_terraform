@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+      - devops1
+      - devops
 
 jobs:
   terraform:
